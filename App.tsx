@@ -9,15 +9,17 @@ export default function App() {
     <View style={styles.container}>
       <Modal
         animationType="slide"
-        transparent={true}
+        transparent={false}
         visible={modalVisible}
         onRequestClose={() => { setModalVisible(!modalVisible) }}>
         <View style={styles.modalView}>
-          <Text style={styles.modalText}>This is modal...</Text>
-          <Pressable
-            onPress={() => setModalVisible(!modalVisible)}>
-            <Text style={styles.textStyle}>Close</Text>
-          </Pressable>
+          <View style={styles.modalBox}>
+            <Text style={styles.modalText}>This is modal...</Text>
+            <Pressable
+              onPress={() => setModalVisible(!modalVisible)}>
+              <Text style={styles.textStyle}>Close</Text>
+            </Pressable>
+          </View>
         </View>
       </Modal>
       <View>
@@ -38,14 +40,31 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   modalView: {
-
+    //margin: 20,
+    //padding: 35,
+    flex: 1,
+  },
+  modalBox: {
+    backgroundColor: '#fbfafb',
+    marginTop: 100,
+    padding: 5,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
   },
   modalText: {
     marginTop: 15,
+    marginBottom: 50,
     textAlign: 'center',
   },
   textStyle: {
     fontWeight: 'bold',
     textAlign: 'center',
+    marginBottom: 15,
   },
 });
