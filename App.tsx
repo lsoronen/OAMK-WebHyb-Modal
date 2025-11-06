@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Pressable, Modal } from 'react-native';
 import React, { useState } from 'react';
 
 export default function App() {
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState<boolean>(false);
 
   return (
     <View style={styles.container}>
